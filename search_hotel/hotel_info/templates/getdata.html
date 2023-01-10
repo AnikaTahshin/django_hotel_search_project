@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'style.css'}">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        {% if data %}
+
+        <ul>
+            {% for x in data %}
+            <img src="../static/media/{{x.img}}" alt="" height="400px" width="300px">
+            <h2>{{x.hotelname}}</h2>
+            <p>{{x.address}}</p>
+            <p>{{x.description}}</p>
+            <!-- <p>{{x.longitude}}</p>
+            <p>{{x.latitude}}</p> -->
+
+            {% endfor %}
+
+        </ul>
+
+
+        {% else %}
+        <p>No Hotels are available</p>
+
+        {% endif %}
+    </div>
+</body>
+
+</html>
